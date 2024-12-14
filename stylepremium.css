@@ -1,0 +1,468 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de Cores */
+:root {
+    --cor-primaria: #0052cc;
+    --cor-secundaria: #ffffff;
+    --cor-acento: #ff5722;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #333333;
+}
+
+/* Tipografia */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* 1. Topo */
+.topo {
+    background: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 10px 0;
+}
+
+.topo .logo img {
+    width: 150px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-menu ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-menu ul li a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--cor-acento);
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--cor-primaria);
+    min-width: 160px;
+    top: 35px;
+    left: 0;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: var(--cor-secundaria);
+}
+
+.dropdown-content li a:hover {
+    background-color: var(--cor-acento);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 2 & 13. HeadLine */
+.headline-01, .headline-repetida {
+    background: var(--cor-fundo);
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headline-content {
+    flex: 1 1 500px;
+}
+
+.headline-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.headline-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--cor-acento);
+    color: var(--cor-secundaria);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+    background: darken(var(--cor-acento), 10%);
+}
+
+.subtexto {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
+
+.headline-video iframe {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+/* 4. Benefícios */
+.beneficios {
+    background: var(--cor-secundaria);
+    padding: 40px 0;
+}
+
+.beneficios .beneficio {
+    text-align: center;
+    padding: 20px;
+}
+
+.beneficios .beneficio i {
+    font-size: 2rem;
+    color: var(--cor-acento);
+    margin-bottom: 10px;
+}
+
+.beneficios .beneficio h3 {
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+}
+
+.beneficios .beneficio p {
+    font-size: 0.95rem;
+}
+
+/* 5. Curso Atualizado */
+.curso-atualizado {
+    background: var(--cor-fundo);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.curso-atualizado h2 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+/* 6. Mockup Plataforma */
+.mockup-plataforma {
+    padding: 60px 0;
+    background: var(--cor-secundaria);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mockup-imagem img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.mockup-texto {
+    flex: 1 1 400px;
+    padding: 20px;
+}
+
+.mockup-texto h3 {
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.mockup-texto ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+}
+
+.mockup-texto ul li {
+    margin-bottom: 10px;
+}
+
+/* 7. Valor Produto */
+.valor-produto {
+    background: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.valor-produto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.valor-produto p {
+    font-size: 1.2rem;
+}
+
+/* 8. Garantia */
+.garantia {
+    background: var(--cor-fundo);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.garantia h3 {
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+}
+
+.garantia p {
+    margin-bottom: 20px;
+}
+
+.garantia .btn-cta {
+    margin-bottom: 10px;
+}
+
+/* 9 & 14. Conheça o Professor */
+.conheca-professor, .conheca-professor-repetido {
+    padding: 60px 0;
+    background: var(--cor-secundaria);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.professor-imagem img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+.professor-texto {
+    flex: 1 1 400px;
+}
+
+.professor-texto h3 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.professor-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* 10. Dúvidas Frequentes */
+.duvidas-frequentes {
+    background: var(--cor-fundo);
+    padding: 60px 0;
+}
+
+.duvidas-frequentes h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.duvidas-frequentes .faq {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+.faq-item h4::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faq-item.active h4::after {
+    content: '\f106';
+}
+
+.faq-item p {
+    display: none;
+    padding: 10px 0;
+    color: var(--cor-texto);
+}
+
+/* 12. Conheça a Plataforma por Dentro */
+.conheca-plataforma {
+    padding: 60px 0;
+    background: var(--cor-secundaria);
+    text-align: center;
+}
+
+.conheca-plataforma h3 {
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+}
+
+.conheca-plataforma p {
+    margin-bottom: 20px;
+}
+
+.conheca-plataforma ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.conheca-plataforma ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.conheca-plataforma ul li::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mockup-dispositivos img {
+    width: 100px;
+    margin: 10px;
+}
+
+/* 11 & 15. Rodapé */
+.rodape {
+    background: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 20px 0;
+    position: relative;
+}
+
+.rodape .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-logo img {
+    width: 150px;
+}
+
+.rodape-links, .rodape-redes {
+    display: flex;
+    align-items: center;
+}
+
+.rodape-links a {
+    color: var(--cor-secundaria);
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.rodape-links a:hover {
+    color: var(--cor-acento);
+}
+
+.rodape-links p {
+    margin-left: 15px;
+}
+
+.rodape-redes a {
+    color: var(--cor-secundaria);
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.rodape-redes a:hover {
+    color: var(--cor-acento);
+}
+
+/* Botão de WhatsApp Flutuante */
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--cor-acento);
+    color: var(--cor-secundaria);
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.whatsapp-flutuante:hover {
+    background: darken(var(--cor-acento), 10%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: static;
+    }
+
+    .headline-01, .headline-repetida, .mockup-plataforma, .conheca-professor, .conheca-professor-repetido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .professor-imagem, .professor-texto, .mockup-texto {
+        margin: auto;
+    }
+
+    .beneficios {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .beneficios .beneficio {
+        margin-bottom: 20px;
+    }
+}
