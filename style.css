@@ -120,7 +120,7 @@ body {
 .navbar .btn-cta {
     background: var(--secondary);
     color: #fff;
-    padding: 5px 60px;
+    padding: 15px 25PX;
     border: none;
     border-radius: 50px;
     font-weight: bold;
