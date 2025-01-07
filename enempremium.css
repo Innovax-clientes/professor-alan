@@ -938,7 +938,6 @@ html {
     line-height: 1.6;
     color: var(--dark-color);
 }
-
 /* Dúvidas Frequentes */
 .faq-section {
     background: var(--background-color);
@@ -946,24 +945,11 @@ html {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
+    text-align: center;
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.faq-button{
-    left: 38%;
-    display: inline-block;
-    padding: 15px 35px;
-    background: var(--accent-color);
-    color: var(--dark-color);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-    font-size: 1.1rem;
-}
 .faq-section::before {
     content: '';
     position: absolute;
@@ -1056,6 +1042,7 @@ html {
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
 }
+
 .faq-item p {
     display: none;
     font-size: 1rem;
@@ -1065,6 +1052,62 @@ html {
 .faq-item.active p {
     display: block;
     margin-top: 10px;
+}
+.faq-section .cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 50px;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Garante que o texto fique centralizado */
+}
+
+.faq-section .cta-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* Responsividade do Botão */
+@media (max-width: 768px) {
+    .faq-section .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        margin-top: 30px; /* Reduzir a margem superior para telas menores */
+        width: auto; /* Permite que o botão mantenha seu tamanho natural */
+        display: block; /* Para centralizar o botão */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .faq-section .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-top: 20px;
+        width: 100%; /* Torna o botão de largura total em telas muito pequenas */
+    }
+}
+
+/* Animação */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Banner de Valor */
