@@ -1,14 +1,33 @@
 /* Variáveis de Cores */
+/* Variáveis de Cores Atualizadas */
 :root {
-    --primary-color: #1E90FF; /* Azul vibrante */
-    --secondary-color: #FF6347; /* Tomate */
-    --background-color: #F0F8FF; /* Azul claro */
-    --dark-color: #333333;
-    --light-color: #FFFFFF;
-    --accent-color: #FFD700; /* Dourado */
-    --font-primary: 'Roboto', sans-serif;
-    --font-secondary: 'Montserrat', sans-serif;
+    --primary-color: #6C63FF;
+    --secondary-color: #FF6584;
+    --background-color: #121212;
+    --text-light: #f0f0f0;
+    --text-dark: #333333;
+    --navbar-height: 80px;
+    --footer-bg: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --overlay-bg: rgba(18, 18, 18, 0.7);
+    --transition-speed: 0.4s;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.5);
+    --btn-shadow: rgba(0, 0, 0, 0.3);
+    
+    /* Variáveis Adicionais para Consistência */
+    --light-color: var(--text-light);
+    --dark-color: var(--text-dark);
+    --accent-color: var(--secondary-color);
+    --primary: var(--primary-color);
+    --secondary: var(--secondary-color);
+    --font-primary: var(--font-body);
+    --font-secondary: var(--font-heading);
 }
+
+
 
 /* Reset Básico */
 * {
@@ -1048,18 +1067,6 @@ html {
     margin-top: 10px;
 }
 
-/* Variáveis de Cores */
-:root {
-    --primary-color: #4A90E2;
-    --secondary-color: #9013FE;
-    --accent-color: #F5A623;
-    --light-color: #FFFFFF;
-    --dark-color: #2C3E50;
-    --font-family: 'Roboto', sans-serif;
-    --font-heading: 'Merriweather', serif;
-    --font-body: 'Roboto', sans-serif;
-}
-
 /* Banner de Valor */
 .value-banner {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -1619,7 +1626,7 @@ html {
     display: inline-block;
     padding: 15px 40px;
     margin-top: 50px;
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: var(--dark-color);
     border-radius: 50px;
     text-decoration: none;
