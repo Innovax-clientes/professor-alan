@@ -1,0 +1,404 @@
+/* ===== YOUTUBE SECTION ULTRA PREMIUM v2.0 ===== */
+#youtube {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+}
+
+/* Improved video background handling */
+.video-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.65;
+  overflow: hidden;
+  filter: saturate(1.1) contrast(1.1);
+  transition: all 0.5s ease;
+}
+
+#youtube:hover .video-background {
+  filter: saturate(1.2) contrast(1.15);
+  opacity: 0.7;
+}
+
+.video-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent 40%, transparent 60%, rgba(0,0,0,0.4));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video-background iframe {
+  width: 100vw;
+  height: 56.25vw; /* 16:9 Aspect Ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 Aspect Ratio */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1); /* Slightly larger to cover the entire area */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Stylized overlay with gradient and effects */
+#youtube .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(130deg, 
+    rgba(15, 23, 42, 0.85), 
+    rgba(8, 15, 30, 0.8),
+    rgba(15, 23, 42, 0.75)
+  );
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Dynamic light effects */
+#youtube .overlay::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(225, 29, 72, 0.2),
+    transparent 70%
+  );
+  opacity: 0.6;
+  filter: blur(60px);
+  transform: rotate(-15deg);
+  animation: pulseLight 10s infinite alternate;
+}
+
+#youtube .overlay::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+  opacity: 0.7;
+  filter: blur(50px);
+  animation: pulseLight 12s infinite alternate-reverse;
+}
+
+@keyframes pulseLight {
+  0% { opacity: 0.4; transform: scale(1) rotate(-15deg); }
+  50% { opacity: 0.7; transform: scale(1.05) rotate(-15deg); }
+  100% { opacity: 0.4; transform: scale(1) rotate(-15deg); }
+}
+
+/* Noise texture overlay */
+#youtube::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 3;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Content styling with floating animation */
+#youtube .content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 30px;
+  animation: contentFloat 6s ease-in-out infinite;
+}
+
+@keyframes contentFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Premium heading with advanced gradient effect */
+#youtube h2 {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 1.8rem;
+  line-height: 1.1;
+  background: linear-gradient(
+    135deg, 
+    #ffffff 0%,
+    #e2e8f0 50%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    0 5px 30px rgba(236, 72, 153, 0.6),
+    0 0 30px rgba(236, 72, 153, 0.4);
+  position: relative;
+  animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3D effect with a subtle underline */
+#youtube h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e11d48, #f43f5e);
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.5);
+}
+
+/* Stylish description text */
+#youtube p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 2.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ultra premium button design */
+#youtube .btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  border-radius: 50px;
+  box-shadow: 
+    0 10px 30px rgba(225, 29, 72, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Advanced button effects */
+#youtube .btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  z-index: 1;
+}
+
+#youtube .btn-danger::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s ease;
+  z-index: 1;
+  animation: btnShine 6s infinite;
+}
+
+@keyframes btnShine {
+  0% { left: -100%; }
+  20%, 100% { left: 100%; }
+}
+
+#youtube .btn-danger i {
+  font-size: 1.1rem;
+  transform: translateZ(0);
+  transition: transform 0.4s ease;
+}
+
+#youtube .btn-danger:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 
+    0 15px 35px rgba(225, 29, 72, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 2px rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #f43f5e, #be123c);
+}
+
+#youtube .btn-danger:hover i {
+  transform: scale(1.2) translateX(3px);
+}
+
+#youtube .btn-danger:active {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px rgba(225, 29, 72, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative elements */
+.yt-decoration {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.yt-decoration.play-icon-large {
+  width: 400px;
+  height: 400px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8 5v14l11-7z' opacity='0.05'/%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0.1;
+  filter: blur(5px);
+  animation: rotateSlow 40s linear infinite;
+}
+
+.yt-decoration.play-icon-small {
+  width: 200px;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8 5v14l11-7z' opacity='0.1'/%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+  bottom: 20%;
+  right: 15%;
+  transform: translate(50%, 50%) scale(1.5);
+  opacity: 0.1;
+  filter: blur(3px);
+  animation: rotateSlow 30s linear infinite reverse;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  #youtube h2 {
+    font-size: 3.2rem;
+  }
+  
+  .yt-decoration.play-icon-large {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  #youtube {
+    min-height: 600px;
+  }
+  
+  #youtube h2 {
+    font-size: 2.8rem;
+  }
+  
+  #youtube p {
+    font-size: 1.2rem;
+  }
+  
+  .yt-decoration.play-icon-large {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #youtube {
+    min-height: 500px;
+  }
+  
+  #youtube h2 {
+    font-size: 2.5rem;
+  }
+  
+  #youtube p {
+    font-size: 1.1rem;
+  }
+  
+  #youtube .btn-danger {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+  
+  .yt-decoration.play-icon-small {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #youtube {
+    min-height: 450px;
+  }
+  
+  #youtube h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #youtube p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  #youtube .btn-danger {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}

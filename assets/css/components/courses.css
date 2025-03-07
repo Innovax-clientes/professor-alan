@@ -1,0 +1,1357 @@
+/* ===== CARD DE CURSOS ULTRA PREMIUM 11.0 - VERSÃO EXTRAORDINÁRIA ===== */
+
+/* Container para os cards com espaçamento otimizado */
+.course-cards-container {
+  position: relative;
+  z-index: 40;
+  isolation: isolate;
+  margin-bottom: 180px;
+  padding: 20px 0;
+}
+
+/* Card principal com dimensões aprimoradas */
+.course-card-premium {
+  height: auto;
+  min-height: 650px; /* Altura aumentada */
+  max-width: 380px;
+  margin: 0 auto 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: cardReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  z-index: 20;
+}
+
+@keyframes cardReveal {
+  0% { opacity: 0; transform: translateY(80px) scale(0.93); }
+  70% { opacity: 1; transform: translateY(-15px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.course-card-premium:hover {
+  transform: translateY(-20px) scale(1.02);
+  z-index: 25;
+  filter: drop-shadow(0 30px 70px rgba(79, 70, 229, 0.3));
+}
+
+/* Estrutura interna aprimorada */
+.card-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 28px;
+  overflow: visible;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 50px rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  will-change: transform, box-shadow;
+  transition: box-shadow 0.7s ease-out;
+}
+
+.course-card-premium:hover .card-inner {
+  box-shadow: 
+    0 40px 90px rgba(0, 0, 0, 0.6),
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(99, 102, 241, 0.3);
+}
+
+/* Frente do card com gradiente luxuoso */
+.card-front {
+  background: linear-gradient(145deg, 
+    rgba(17, 24, 39, 0.92),
+    rgba(13, 18, 30, 0.96),
+    rgba(8, 11, 22, 0.99));
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* ===== IMAGEM CINEMATOGRÁFICA AUMENTADA ===== */
+.card-image-wrapper {
+  height: 280px !important; /* Altura significativamente aumentada */
+  position: relative;
+  border-radius: 28px 28px 0 0;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Efeito parallax na imagem */
+.course-card-premium:hover .card-image-wrapper {
+  transform: translateZ(10px);
+}
+
+/* Imagem com efeito cinemático */
+.card-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 5 !important;
+  transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), filter 1.2s ease;
+  filter: brightness(1.05) contrast(1.1) saturate(1.15);
+  will-change: transform, filter;
+  transform-origin: center;
+}
+
+.course-card-premium:hover .card-image {
+  transform: scale(1.15);
+  filter: brightness(1.12) contrast(1.15) saturate(1.25);
+}
+
+/* Overlay com efeito cinematográfico */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(10, 15, 30, 0.9) 100%);
+  mix-blend-mode: multiply;
+  z-index: 6;
+  opacity: 0.85;
+  transition: opacity 0.8s ease, background 0.8s ease;
+}
+
+.course-card-premium:hover .image-overlay {
+  opacity: 0.75;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(10, 15, 30, 0.85) 100%);
+}
+
+/* Brilho cinemático refinado na imagem */
+.card-image-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 45%, 
+    transparent 100%);
+  opacity: 0;
+  z-index: 7;
+  transition: opacity 0.8s ease;
+  mix-blend-mode: overlay;
+}
+
+.course-card-premium:hover .card-image-shine {
+  opacity: 1;
+  animation: cinematicSweep 8s ease-in-out infinite;
+}
+
+@keyframes cinematicSweep {
+  0% { opacity: 0; transform: scale(1) rotate(0deg); }
+  20% { opacity: 0.8; transform: scale(1.05) rotate(1deg); }
+  40% { opacity: 0.6; transform: scale(1.03) rotate(-1deg); }
+  60% { opacity: 0.8; transform: scale(1.05) rotate(0.5deg); }
+  80% { opacity: 0.6; transform: scale(1.02) rotate(-0.5deg); }
+  100% { opacity: 0; transform: scale(1) rotate(0deg); }
+}
+
+/* Tag do curso com efeito premium */
+.card-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #f97316, #db2777);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  z-index: 10;
+  letter-spacing: 0.06em;
+  box-shadow: 
+    0 10px 25px rgba(249, 115, 22, 0.4),
+    0 5px 12px rgba(0, 0, 0, 0.3);
+  animation: tagFloatPremium 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes tagFloatPremium {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.05); }
+}
+
+/* Conteúdo do card com visual refinado */
+.card-content {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 10;
+}
+
+/* Categoria do curso com efeito premium */
+.card-category {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.18);
+  padding: 8px 16px;
+  border-radius: 50px;
+  align-self: flex-start;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-category i {
+  margin-right: 8px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.1rem;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.course-card-premium:hover .card-category {
+  transform: translateY(-8px);
+  background: rgba(99, 102, 241, 0.28);
+  box-shadow: 
+    0 15px 25px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.15);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.course-card-premium:hover .card-category i {
+  transform: scale(1.25) rotate(12deg);
+}
+
+/* Título com efeito de luxo */
+.card-title {
+  font-size: 1.85rem;
+  margin-bottom: 24px;
+  color: white;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+}
+
+.course-card-premium:hover .card-title {
+  transform: translateY(-8px) translateZ(25px);
+  background: linear-gradient(135deg, 
+    #ffffff 10%, 
+    #e2e8f0 40%, 
+    #a5b4fc 70%, 
+    #8b5cf6 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+}
+
+/* Características com visual premium */
+.card-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 10px;
+  background: rgba(99, 102, 241, 0.12);
+  border-radius: 20px;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 1.2s ease;
+  transform: translateX(-100%);
+}
+
+.course-card-premium:hover .feature {
+  transform: translateY(-12px) translateZ(20px);
+  background: rgba(99, 102, 241, 0.2);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 8px 15px rgba(0, 0, 0, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.course-card-premium:hover .feature::before {
+  opacity: 1;
+  transform: translateX(100%);
+  transition-delay: calc(var(--feature-index, 0) * 0.1s);
+}
+
+.feature:nth-child(1) {
+  --feature-index: 1;
+}
+
+.feature:nth-child(2) {
+  --feature-index: 2;
+}
+
+.feature:nth-child(3) {
+  --feature-index: 3;
+}
+
+.feature i {
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 6px rgba(99, 102, 241, 0.4));
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.course-card-premium:hover .feature i {
+  transform: scale(1.35) translateY(-5px);
+  filter: drop-shadow(0 8px 15px rgba(99, 102, 241, 0.6));
+  background: linear-gradient(135deg, #818cf8, #6366f1, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.feature-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.4s ease;
+}
+
+.course-card-premium:hover .feature-text {
+  color: white;
+  transform: translateY(3px);
+}
+
+/* ===== DESIGN EXTRAORDINÁRIO PARA O PREÇO ===== */
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 30px;
+  position: relative;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Efeito de borda brilhante */
+.card-meta::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(99, 102, 241, 1), 
+    rgba(139, 92, 246, 0.8),
+    rgba(99, 102, 241, 0.3),
+    transparent);
+  transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  filter: blur(0.5px);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+}
+
+.course-card-premium:hover .card-meta::before {
+  width: 100%;
+  animation: borderGlowDeluxe 3s infinite alternate;
+}
+
+@keyframes borderGlowDeluxe {
+  0% { filter: blur(0.5px) brightness(1); opacity: 0.8; }
+  100% { filter: blur(1.5px) brightness(1.5); opacity: 1; }
+}
+
+/* Container de preço com efeitos luxuosos */
+.course-price {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 5;
+}
+
+/* Aura de preço premium */
+.course-price::before {
+  content: '';
+  position: absolute;
+  inset: -15px -25px;
+  background: radial-gradient(
+    circle at center, 
+    rgba(99, 102, 241, 0.2),
+    transparent 70%
+  );
+  border-radius: 20px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+  filter: blur(15px);
+}
+
+.course-card-premium:hover .course-price::before {
+  opacity: 1;
+  animation: pricePulseDeluxe 3s infinite alternate;
+}
+
+@keyframes pricePulseDeluxe {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.3; }
+}
+
+/* Preço original com efeito refinado */
+.price-original {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: line-through;
+  margin-bottom: 8px;
+  transition: all 0.4s ease;
+  position: relative;
+  transform-origin: left;
+}
+
+.course-card-premium:hover .price-original {
+  transform: translateY(-5px) scale(0.95);
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Preço atual com design extraordinário */
+.price-current {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem; /* Tamanho aumentado */
+  font-weight: 800;
+  line-height: 1;
+  position: relative;
+  background: linear-gradient(135deg, 
+    #ffffff 0%,
+    #e0e7ff 30%,
+    #a5b4fc 60%,
+    #818cf8 85%,
+    #6366f1 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 3px 5px rgba(99, 102, 241, 0.4));
+  letter-spacing: -0.02em;
+  margin-right: 15px;
+  transform: translateZ(10px);
+}
+
+.course-card-premium:hover .price-current {
+  transform: translateY(-10px) translateZ(40px) scale(1.05);
+  filter: drop-shadow(0 10px 25px rgba(99, 102, 241, 0.7));
+  background-position: right center;
+  animation: priceGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes priceGlow {
+  0% { filter: drop-shadow(0 10px 20px rgba(99, 102, 241, 0.5)); }
+  100% { filter: drop-shadow(0 15px 30px rgba(99, 102, 241, 0.8)); }
+}
+
+/* Elemento brilhante extra para o preço */
+.price-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: priceShine 8s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.course-card-premium:hover .price-shine {
+  opacity: 1;
+}
+
+@keyframes priceShine {
+  0% { left: -100%; }
+  20%, 100% { left: 200%; }
+}
+
+/* Etiqueta de desconto ultra premium */
+.price-discount {
+  position: absolute;
+  top: -15px;
+  right: -75px;
+  background: linear-gradient(135deg, #db2777, #9333ea);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  transform: scale(0.95);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 10px 25px rgba(219, 39, 119, 0.4),
+    0 5px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  will-change: transform;
+  z-index: 6;
+}
+
+.price-discount::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: discountShinePremium 3s ease-in-out infinite;
+}
+
+@keyframes discountShinePremium {
+  0% { left: -100%; }
+  30%, 100% { left: 200%; }
+}
+
+.course-card-premium:hover .price-discount {
+  transform: scale(1.2) translateY(-15px) rotate(-8deg);
+  box-shadow: 
+    0 20px 40px rgba(219, 39, 119, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Duração do curso com visual premium */
+.course-duration {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 12px 20px;
+  border-radius: 50px;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transform: translateZ(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.course-card-premium:hover .course-duration {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(99, 102, 241, 0.18);
+  transform: translateY(-12px) translateZ(25px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 8px 15px rgba(0, 0, 0, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.course-duration i {
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.course-card-premium:hover .course-duration i {
+  transform: scale(1.4) rotate(15deg);
+  filter: drop-shadow(0 3px 8px rgba(99, 102, 241, 0.6));
+}
+
+/* Botão de ação extraordinário */
+.card-action {
+  margin-top: 35px;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.action-button {
+  position: relative;
+  display: block !important;
+  width: 100%;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5, #4338ca);
+  background-size: 300% 100%;
+  color: white !important;
+  border: none;
+  border-radius: 18px;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 20px 40px rgba(79, 70, 229, 0.5),
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  transform: translateZ(0);
+}
+
+/* Efeito de vidro premium no botão */
+.action-button::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15), 
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+/* Borda de brilho animada aprimorada */
+.action-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6,
+    #d946ef,
+    #8b5cf6,
+    #6366f1
+  );
+  background-size: 300% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.action-button:hover::after {
+  opacity: 1;
+}
+
+.action-button span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.action-button i {
+  color: white !important;
+  font-size: 1.3rem;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.action-button:hover {
+  transform: translateY(-12px) scale(1.03);
+  background-position: right center;
+  box-shadow: 
+    0 30px 60px rgba(79, 70, 229, 0.6),
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.action-button:hover i {
+  transform: translateX(10px);
+  animation: arrowPulsePremium 1.5s infinite;
+}
+
+@keyframes arrowPulsePremium {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+  100% { transform: translateX(0); }
+}
+
+/* Badge de acesso vitalício ultra premium */
+.lifetime-badge {
+  position: absolute;
+  top: 60px;
+  right: -18px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 60;
+  box-shadow: 
+    0 10px 25px rgba(217, 119, 6, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: rotate(45deg);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lifetime-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 12px;
+  height: 5px;
+  background: #92400e;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  border-radius: 0 0 0 5px;
+}
+
+.lifetime-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  right: 0;
+  width: 5px;
+  height: 12px;
+  background: #92400e;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  border-radius: 0 0 5px 0;
+}
+
+.course-card-premium:hover .lifetime-badge {
+  transform: rotate(45deg) scale(1.12);
+  box-shadow: 
+    0 15px 35px rgba(217, 119, 6, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+/* ===== EFEITOS EXTRAS CINEMATOGRÁFICOS ===== */
+
+/* Suave brilho de fundo para destaque */
+.course-card-premium::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at 50% 50%, 
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+  border-radius: 30px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.8s ease;
+  filter: blur(20px);
+}
+
+.course-card-premium:hover::before {
+  opacity: 1;
+  animation: cardAura 5s infinite alternate;
+}
+
+@keyframes cardAura {
+  0% { filter: blur(20px) brightness(1); transform: scale(1); }
+  100% { filter: blur(30px) brightness(1.3); transform: scale(1.05); }
+}
+
+/* Efeito de vidro na parte traseira */
+.course-card-premium::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg, 
+    rgba(99, 102, 241, 0.1), 
+    rgba(255, 255, 255, 0.05),
+    rgba(99, 102, 241, 0.1));
+  z-index: -2;
+  border-radius: 30px;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.course-card-premium:hover::after {
+  opacity: 1;
+}
+
+/* Garantir compatibilidade */
+@supports not (backdrop-filter: blur(15px)) {
+  .card-front {
+    background: linear-gradient(145deg, 
+      rgba(15, 23, 42, 0.97),
+      rgba(12, 19, 36, 0.98),
+      rgba(8, 11, 22, 1));
+  }
+}
+
+/* Efeito 3D nos elementos internos */
+.course-card-premium.tilt-effect {
+  transform-style: preserve-3d;
+}
+
+.course-card-premium.tilt-effect .card-content > * {
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== MELHORIAS PARA RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+  .course-card-premium {
+    min-height: 620px;
+    margin-bottom: 100px;
+  }
+  
+  .card-image-wrapper {
+    height: 260px !important;
+  }
+  
+  .card-content {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .course-cards-container {
+    margin-bottom: 150px;
+  }
+  
+  .course-card-premium {
+    min-height: 600px;
+    margin-bottom: 120px;
+  }
+  
+  .card-image-wrapper {
+    height: 240px !important;
+  }
+  
+  .price-current {
+    font-size: 2.2rem;
+  }
+  
+  .price-discount {
+    font-size: 1rem;
+    right: -65px;
+  }
+}
+
+@media (max-width: 767px) {
+  .course-card-premium {
+    min-height: 580px;
+  }
+  
+  .card-image-wrapper {
+    height: 220px !important;
+  }
+  
+  .card-content {
+    padding: 25px 20px;
+  }
+  
+  .card-title {
+    font-size: 1.6rem;
+  }
+  
+  .price-current {
+    font-size: 2rem;
+  }
+  
+  .action-button {
+    padding: 16px 24px;
+  }
+}
+
+/* ===== MELHORIAS PARA ACESSIBILIDADE ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== JAVASCRIPT FALLBACKS ===== */
+.js-fallback {
+  opacity: 1 !important;
+}
+
+.js-fallback .card-image {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.js-fallback .action-button {
+  visibility: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* ===== GARANTIA DE ESPAÇAMENTO ===== */
+.spacer-bottom {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+/* ===== ADIÇÕES FINAIS PARA VISUAL EXTRAORDINÁRIO ===== */
+
+/* Melhorar visual do preço com textura dourada */
+.price-current.premium-gold {
+  background: linear-gradient(135deg, 
+    #ffffff 0%,
+    #fffbeb 10%,
+    #fef3c7 20%,
+    #fde68a 30%,
+    #fcd34d 50%,
+    #f59e0b 70%,
+    #d97706 85%,
+    #b45309 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 2px 5px rgba(249, 115, 22, 0.5));
+}
+
+.course-card-premium:hover .price-current.premium-gold {
+  background-position: right center;
+  filter: drop-shadow(0 5px 15px rgba(249, 115, 22, 0.7));
+  animation: goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow {
+  0% { filter: drop-shadow(0 5px 12px rgba(249, 115, 22, 0.5)); }
+  100% { filter: drop-shadow(0 8px 20px rgba(249, 115, 22, 0.8)); }
+}
+
+/* Versão premium diamante para preços mais altos */
+.price-current.premium-diamond {
+  background: linear-gradient(135deg, 
+    #ffffff 0%,
+    #e0f2fe 20%,
+    #bae6fd 40%,
+    #7dd3fc 60%,
+    #38bdf8 80%,
+    #0ea5e9 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 2px 5px rgba(14, 165, 233, 0.5));
+}
+
+.course-card-premium:hover .price-current.premium-diamond {
+  background-position: right center;
+  filter: drop-shadow(0 5px 15px rgba(14, 165, 233, 0.7));
+  animation: diamondGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes diamondGlow {
+  0% { filter: drop-shadow(0 5px 12px rgba(14, 165, 233, 0.5)); }
+  100% { filter: drop-shadow(0 8px 20px rgba(14, 165, 233, 0.8)); }
+}
+
+/* ===== CONTAINER DE CURSOS EM GRID - ULTRA PREMIUM 12.0 ===== */
+.courses-section {
+  position: relative;
+  padding: 50px 0 120px;
+  overflow: hidden;
+}
+
+/* Efeitos de fundo para a seção */
+.courses-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: radial-gradient(circle at center top, 
+    rgba(99, 102, 241, 0.15) 0%, 
+    rgba(99, 102, 241, 0.05) 40%, 
+    transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+}
+
+/* Container de Grid Responsivo */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 50px 30px;
+  padding: 30px 0;
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Melhorias no Card de Curso */
+.course-card-premium {
+  min-height: 680px;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  margin-bottom: 0 !important; /* Remove margens extras */
+  animation: cardEntrance 0.8s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+}
+
+/* Animação sequencial para entrada dos cards */
+@keyframes cardEntrance {
+  0% { opacity: 0; transform: translateY(60px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Configuração para animação sequencial */
+.course-card-premium:nth-child(1) { animation-delay: 0.1s; }
+.course-card-premium:nth-child(2) { animation-delay: 0.2s; }
+.course-card-premium:nth-child(3) { animation-delay: 0.3s; }
+.course-card-premium:nth-child(4) { animation-delay: 0.4s; }
+.course-card-premium:nth-child(5) { animation-delay: 0.5s; }
+.course-card-premium:nth-child(6) { animation-delay: 0.6s; }
+
+/* Melhorias de visual do card */
+.card-inner {
+  height: 100%;
+  border-radius: 32px;
+  overflow: visible;
+  transform-style: preserve-3d;
+  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-inner::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 34px;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.3),
+    rgba(79, 70, 229, 0.1) 20%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(99, 102, 241, 0) 80%
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Imagem do curso aprimorada */
+.card-image-wrapper {
+  height: 300px !important; /* Altura aumentada */
+  border-radius: 32px 32px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  filter: brightness(1.05) contrast(1.1) saturate(1.2);
+}
+
+/* Overlay cinemático aprimorado */
+.image-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(8, 11, 22, 0.95) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+/* Nova tag de curso com efeito premium */
+.card-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #f97316, #e11d48);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 10;
+  box-shadow: 
+    0 15px 30px rgba(249, 115, 22, 0.4),
+    0 8px 15px rgba(0, 0, 0, 0.3);
+  transform-origin: left center;
+}
+
+.card-tag::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.5), rgba(225, 29, 72, 0.5));
+  z-index: -1;
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Melhorias no conteúdo do card */
+.card-content {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 25px;
+}
+
+/* Título com efeito melhorado */
+.card-title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+  margin-bottom: 0;
+  background: linear-gradient(
+    to right,
+    #fff 0%,
+    #e2e8f0 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Preço com efeito premium avançado */
+.price-current {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.8rem; /* Tamanho aumentado */
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, 
+    #ffffff 0%,
+    #fef3c7 30%,
+    #fcd34d 50%,
+    #f59e0b 70%,
+    #d97706 90%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 10px rgba(249, 115, 22, 0.4));
+  position: relative;
+  z-index: 5;
+}
+
+/* Aura do preço */
+.price-current::after {
+  content: '';
+  position: absolute;
+  inset: -15px -10px;
+  background: radial-gradient(
+    circle at center, 
+    rgba(249, 115, 22, 0.2),
+    transparent 70%
+  );
+  border-radius: 20px;
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Botão aprimorado */
+.action-button {
+  position: relative;
+  padding: 22px 30px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border-radius: 24px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  border: none;
+  box-shadow: 
+    0 20px 40px rgba(79, 70, 229, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15), 
+    rgba(255, 255, 255, 0) 80%);
+  opacity: 0.5;
+}
+
+/* Efeitos de hover sofisticados */
+.course-card-premium:hover {
+  transform: translateY(-20px) scale(1.03);
+  z-index: 30;
+}
+
+.course-card-premium:hover .card-inner {
+  box-shadow: 
+    0 40px 90px rgba(0, 0, 0, 0.6),
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(99, 102, 241, 0.35);
+}
+
+.course-card-premium:hover .card-inner::before {
+  opacity: 1;
+}
+
+.course-card-premium:hover .card-image {
+  transform: scale(1.18);
+}
+
+.course-card-premium:hover .card-tag::before {
+  opacity: 1;
+}
+
+.course-card-premium:hover .price-current {
+  background-position: 100% 0;
+  animation: priceGlowEnhanced 2s infinite alternate;
+}
+
+.course-card-premium:hover .price-current::after {
+  opacity: 1;
+}
+
+@keyframes priceGlowEnhanced {
+  0% { filter: drop-shadow(0 5px 12px rgba(249, 115, 22, 0.4)); }
+  100% { filter: drop-shadow(0 10px 25px rgba(249, 115, 22, 0.7)); }
+}
+
+.course-card-premium:hover .action-button {
+  background: linear-gradient(135deg, #6366f1, #4f46e5, #4338ca);
+  transform: translateY(-10px);
+  box-shadow: 
+    0 30px 60px rgba(79, 70, 229, 0.5),
+    0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade otimizada para o grid */
+@media (max-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px 25px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px 20px;
+  }
+  
+  .course-card-premium {
+    min-height: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px 15px;
+  }
+  
+  .course-card-premium {
+    min-height: 620px;
+  }
+  
+  .card-image-wrapper {
+    height: 260px !important;
+  }
+  
+  .card-content {
+    padding: 25px 22px;
+    gap: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .action-button {
+    padding: 18px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "professor-alan",
+    "version": "1.0.0",
+    "description": "Site do Professor Alan Soares",
+    "main": "index.html",
+    "scripts": {
+      "dev": "live-server --port=3000",
+      "build": "echo \"No build step required for static site\""
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "live-server": "^1.2.2"
+    }
+  }
