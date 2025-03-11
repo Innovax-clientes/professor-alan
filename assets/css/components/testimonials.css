@@ -508,4 +508,71 @@
     line-height: 1.5;
     max-height: 120px;
   }
+}/* Responsividade para Seção de Depoimentos */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .testimonials-header h2 {
+    font-size: 2rem;
+  }
+  
+  .testimonial-card {
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .testimonial-avatar img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+  
+  .testimonials-controls {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .testimonials-header p {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-info h4 {
+    font-size: 1rem;
+  }
+  
+  .testimonial-info .role {
+    font-size: 0.8rem;
+  }
+  
+  .card-back {
+    padding: 15px;
+  }
+  
+  .testimonials-controls {
+    bottom: 10px;
+  }
 }

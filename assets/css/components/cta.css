@@ -1363,3 +1363,119 @@
     font-size: 1.2rem;
   }
 }
+/* Responsividade para Elementos CTA e Seção Premium */
+@media (max-width: 992px) {
+  .premium-hero-section {
+    padding: 80px 0 100px;
+  }
+  
+  .premium-row {
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .premium-title {
+    font-size: 2.8rem;
+  }
+  
+  .key-features {
+    flex-wrap: wrap;
+  }
+  
+  .key-feature {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+  
+  .premium-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-button {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .exclusive-benefits {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .benefit {
+    flex-basis: 50%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-hero-section {
+    padding: 60px 0 80px;
+  }
+  
+  .premium-title {
+    font-size: 2.2rem;
+  }
+  
+  .title-accent {
+    font-size: 1.2rem;
+  }
+  
+  .premium-description p {
+    font-size: 1rem;
+  }
+  
+  .key-feature {
+    flex-basis: 100%;
+  }
+  
+  .pricing-showcase {
+    padding: 20px;
+  }
+  
+  .current-price .value {
+    font-size: 2.5rem;
+  }
+  
+  .benefit {
+    flex-basis: 100%;
+  }
+  
+  .floating-elements-container {
+    display: none;
+  }
+  
+  .parallax-elements, 
+  .floating-element {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .premium-title {
+    font-size: 1.8rem;
+  }
+  
+  .exclusivity-badge {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+  
+  .original-price .value {
+    font-size: 1rem;
+  }
+  
+  .current-price .value {
+    font-size: 2rem;
+  }
+  
+  .discount-tag {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .floating-math-symbols {
+    display: none;
+  }
+}

@@ -1345,3 +1345,519 @@
   100% { transform: rotate(720deg); }
 }
 }
+/* Responsividade Completa para About Section */
+
+/* Corrige o layout principal para todos os tamanhos de tela */
+.about-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(40px, 5vw, 120px);
+  align-items: center;
+}
+
+/* Desktop grande (1400px+) */
+@media (min-width: 1401px) {
+  .professor-img-container {
+    flex: 0 0 45%;
+  }
+  
+  .about-text-container {
+    flex: 1;
+  }
+}
+
+/* Desktop médio (1200px - 1400px) */
+@media (max-width: 1400px) {
+  #about {
+    padding: 150px 0 100px;
+  }
+  
+  .professor-img-container {
+    flex: 0 0 40%;
+  }
+  
+  .about-text-container {
+    flex: 1;
+  }
+  
+  .about-heading h2 {
+    font-size: 3rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablet Landscape/Desktop pequeno (992px - 1199px) */
+@media (max-width: 1199px) {
+  #about {
+    padding: 120px 0 80px;
+  }
+  
+  .about-wrapper {
+    gap: 50px;
+  }
+  
+  .professor-img-container {
+    flex: 0 0 45%;
+  }
+  
+  .about-text-container {
+    flex: 1;
+  }
+  
+  .about-heading h2 {
+    font-size: 2.7rem;
+  }
+  
+  .professor-img-wrapper {
+    transform: rotateX(3deg) rotateY(-5deg);
+  }
+  
+  .floating-panel {
+    transform: scale(0.9);
+  }
+  
+  .panel-1 {
+    top: -15%;
+    right: -15%;
+  }
+  
+  .panel-2 {
+    bottom: -10%;
+    left: -10%;
+  }
+  
+  .expertise-areas {
+    gap: 30px;
+  }
+  
+  .expertise-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .stats-container {
+    gap: 20px;
+  }
+  
+  .stat-item {
+    padding: 25px;
+  }
+  
+  .stat-number {
+    font-size: 2.4rem;
+  }
+}
+
+/* Tablet (768px - 991px) - PONTO DE QUEBRA IMPORTANTE */
+@media (max-width: 991px) {
+  #about {
+    padding: 100px 0 70px;
+  }
+  
+  /* Mudança para layout em coluna */
+  .about-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .professor-img-container,
+  .about-text-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .professor-img-container {
+    height: auto;
+    aspect-ratio: 4/5;
+    max-height: 700px;
+  }
+  
+  /* Reduz ou remove efeitos 3D que podem ser problemáticos em tablets */
+  .professor-img-wrapper {
+    transform: rotateX(2deg) rotateY(-3deg);
+  }
+  
+  .professor-img-wrapper:hover {
+    transform: rotateX(0) rotateY(0);
+  }
+  
+  /* Oculta elementos decorativos que ocupam muito espaço */
+  .floating-panel {
+    display: none;
+  }
+  
+  .badge-1 {
+    right: -10%;
+    bottom: 5%;
+    transform: translateZ(30px) scale(0.9);
+  }
+  
+  .badge-2 {
+    left: -10%;
+    top: 10%;
+    transform: translateZ(30px) scale(0.9);
+  }
+  
+  .professor-img-wrapper:hover .badge-1,
+  .professor-img-wrapper:hover .badge-2 {
+    transform: translateZ(30px) scale(0.9);
+  }
+  
+  /* Ajusta layout de áreas de expertise */
+  .expertise-areas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+  }
+  
+  /* Ajusta estatísticas para duas colunas */
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-item {
+    padding: 25px 20px;
+  }
+  
+  .stat-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .stat-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  /* Simplifica botões */
+  .about-cta {
+    margin-top: 40px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .btn-about {
+    min-width: 200px;
+    text-align: center;
+  }
+}
+
+/* Celular grande/Tablet pequeno (576px - 767px) */
+@media (max-width: 767px) {
+  #about {
+    padding: 80px 0 60px;
+  }
+  
+  .about-wrapper {
+    gap: 50px;
+  }
+  
+  /* Conteúdo simplificado para celulares */
+  .professor-img-container {
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 1/1.2;
+    margin-bottom: 0;
+  }
+  
+  /* Reduzir ainda mais efeitos 3D */
+  .professor-img-wrapper {
+    transform: none !important;
+  }
+  
+  .img-frame {
+    inset: -10px;
+    border-radius: 30px;
+  }
+  
+  .img-primary {
+    border-radius: 25px;
+  }
+  
+  .img-glow {
+    opacity: 0.4;
+    filter: blur(30px);
+  }
+  
+  /* Ocultar elementos decorativos */
+  .achievement-badge {
+    display: none;
+  }
+  
+  /* Texto mais compacto */
+  .section-label {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-heading h2 {
+    font-size: 2.1rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+  
+  .about-heading p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Uma coluna para expertise */
+  .expertise-areas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 30px 0;
+  }
+  
+  .expertise-item {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .expertise-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+  
+  .expertise-content {
+    flex: 1;
+  }
+  
+  .expertise-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .expertise-description {
+    font-size: 0.95rem;
+  }
+  
+  /* Ajustes para botões */
+  .about-cta {
+    flex-direction: column;
+    margin-top: 35px;
+  }
+  
+  .btn-about {
+    width: 100%;
+    padding: 14px 20px;
+  }
+  
+  /* Ajustes para estatísticas */
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+  
+  .stat-content {
+    flex: 1;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+}
+
+/* Celular (até 575px) */
+@media (max-width: 575px) {
+  #about {
+    padding: 60px 0 50px;
+  }
+  
+  /* Reduzir padding do container */
+  .container {
+    padding: 0 15px;
+  }
+  
+  .about-wrapper {
+    gap: 40px;
+  }
+  
+  /* Imagem ainda mais compacta */
+  .professor-img-container {
+    max-width: 320px;
+    aspect-ratio: 1/1.1;
+  }
+  
+  /* Simplificar frame */
+  .img-frame {
+    inset: -8px;
+    border-radius: 25px;
+  }
+  
+  .img-primary {
+    border-radius: 20px;
+  }
+  
+  /* Reduzir ainda mais texto */
+  .section-label {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .about-heading h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .about-heading p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* Ajustes para expertise */
+  .expertise-areas {
+    gap: 15px;
+    margin: 25px 0;
+  }
+  
+  .expertise-item {
+    padding: 15px;
+    background: rgba(13, 13, 30, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .expertise-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+  }
+  
+  .expertise-icon i {
+    font-size: 1.3rem;
+  }
+  
+  .expertise-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  
+  .expertise-description {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Estatísticas simplificadas */
+  .stats-container {
+    margin-top: 25px;
+    gap: 12px;
+  }
+  
+  .stat-item {
+    padding: 15px;
+  }
+  
+  .stat-icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 12px;
+  }
+  
+  .stat-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .stat-description {
+    display: none;
+  }
+  
+  /* Botão mais compacto */
+  .about-cta {
+    margin-top: 30px;
+  }
+  
+  .btn-about {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-about i {
+    font-size: 1rem;
+  }
+  
+  /* Reduzir efeitos de fundo */
+  .light-rays {
+    opacity: 0.5;
+  }
+  
+  .cinematic-bg {
+    opacity: 0.6;
+  }
+  
+  .grid-lines {
+    opacity: 0.1;
+  }
+}
+
+/* Celular pequeno (até 380px) */
+@media (max-width: 380px) {
+  #about {
+    padding: 50px 0 40px;
+  }
+  
+  .professor-img-container {
+    max-width: 280px;
+  }
+  
+  .img-frame {
+    inset: -5px;
+    border-radius: 20px;
+  }
+  
+  .about-heading h2 {
+    font-size: 1.6rem;
+  }
+  
+  .expertise-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+}

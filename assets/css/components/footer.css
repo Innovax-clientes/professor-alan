@@ -1396,4 +1396,68 @@ footer {
   75% { transform: scale(1.2); }
   100% { transform: scale(1); }
   
+}/* Responsividade para Footer */
+@media (max-width: 992px) {
+  .footer-container {
+    padding: 40px 20px 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links-bottom {
+    margin: 10px 0;
+  }
+  
+  .developed-by {
+    margin-top: 10px;
+  }
+  
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-links-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-links-bottom a {
+    margin: 5px 0;
+  }
+  
+  .developed-by a {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .developed-by img {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    padding: 30px 15px 20px;
+  }
+  
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+  
+  .footer-links-bottom a {
+    font-size: 0.8rem;
+  }
+  
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
 }

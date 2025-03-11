@@ -401,4 +401,158 @@
     padding: 12px 24px;
     font-size: 0.95rem;
   }
+}/* Responsividade Aprimorada para YouTube Section */
+@media (max-width: 1200px) {
+  #youtube {
+    min-height: 550px;
+  }
+  
+  #youtube .content {
+    max-width: 85%;
+  }
+  
+  #youtube h2 {
+    font-size: 2.8rem;
+  }
+  
+  .yt-decoration {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 992px) {
+  #youtube {
+    min-height: 500px;
+    padding: 80px 0;
+  }
+  
+  #youtube .content {
+    max-width: 90%;
+  }
+  
+  #youtube h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  
+  #youtube p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 650px;
+  }
+  
+  .yt-decoration {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  
+  #youtube .btn-danger {
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #youtube {
+    min-height: auto;
+    padding: 70px 0;
+  }
+  
+  #youtube .overlay {
+    opacity: 0.85;
+  }
+  
+  #youtube .content {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+  
+  #youtube h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  #youtube p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    max-width: 550px;
+  }
+  
+  .yt-decoration {
+    opacity: 0.4;
+    display: none;
+  }
+  
+  #youtube .btn-danger {
+    padding: 15px 25px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  #youtube {
+    padding: 60px 0;
+    background-position: center;
+  }
+  
+  #youtube .overlay {
+    opacity: 0.9;
+  }
+  
+  #youtube .content {
+    padding: 0 10px;
+  }
+  
+  #youtube h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  #youtube p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  #youtube .btn-danger {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    max-width: 250px;
+  }
+  
+  #youtube .btn-danger i {
+    font-size: 1.1rem;
+  }
+  
+  /* Garantir que o botão se destaque melhor em telas pequenas */
+  #youtube .btn-danger {
+    box-shadow: 
+      0 10px 25px rgba(225, 29, 72, 0.5),
+      0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 400px) {
+  #youtube {
+    padding: 50px 0;
+  }
+  
+  #youtube h2 {
+    font-size: 1.6rem;
+  }
+  
+  #youtube p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  #youtube .btn-danger {
+    padding: 12px 20px;
+  }
 }

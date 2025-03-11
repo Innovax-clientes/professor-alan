@@ -2110,4 +2110,79 @@
       .whatsapp-float i {
         font-size: 24px;
       }
-    }
+    }/* Responsividade para Header */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 80px 0 100px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btn-glow, .btn-outline {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-metrics {
+    flex-wrap: wrap;
+  }
+  
+  .metric {
+    flex-basis: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .hero-image-container {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 0 80px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .title-badge {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+  
+  .formula-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-metrics {
+    gap: 10px;
+  }
+  
+  .metric {
+    flex-basis: 100%;
+  }
+  
+  .metric-value {
+    font-size: 1.8rem;
+  }
+}

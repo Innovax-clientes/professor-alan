@@ -1759,3 +1759,60 @@
     font-size: 70% !important;
   }
 }
+/* Responsividade para Seção de Cursos */
+@media (max-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .course-card-premium {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-action {
+    margin-top: 15px;
+  }
+  
+  .action-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .price-current {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  
+  .price-discount {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+  }
+}
