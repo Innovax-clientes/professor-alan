@@ -1042,48 +1042,40 @@
 
   <!-- Script de backup para o contador -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Contador regressivo backup
-      const countdownDays = document.getElementById('countdown-days');
-      const countdownHours = document.getElementById('countdown-hours');
-      const countdownMinutes = document.getElementById('countdown-minutes');
-      const countdownSeconds = document.getElementById('countdown-seconds');
-
-      if (countdownDays && countdownHours && countdownMinutes && countdownSeconds) {
-        console.log("Inicializando contador de backup");
-
-        // Data 7 dias à frente
-        const endDate = new Date();
-        endDate.setDate(endDate.getDate() + 7);
-
-        function updateCounter() {
-          const now = new Date();
-          const diff = endDate - now;
-
-          if (diff <= 0) {
-            countdownDays.textContent = "00";
-            countdownHours.textContent = "00";
-            countdownMinutes.textContent = "00";
-            countdownSeconds.textContent = "00";
-            return;
-          }
-
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-          countdownDays.textContent = String(days).padStart(2, '0');
-          countdownHours.textContent = String(hours).padStart(2, '0');
-          countdownMinutes.textContent = String(minutes).padStart(2, '0');
-          countdownSeconds.textContent = String(seconds).padStart(2, '0');
-        }
-
-        // Atualiza a cada segundo
-        updateCounter();
-        setInterval(updateCounter, 1000);
+    function initCountdown() {
+      const countdownElements = {
+        days: document.getElementById('countdown-days'),
+        hours: document.getElementById('countdown-hours'),
+        minutes: document.getElementById('countdown-minutes'),
+        seconds: document.getElementById('countdown-seconds')
+      };
+      
+      if (!Object.values(countdownElements).every(Boolean)) return;
+      
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 7);
+      
+      function updateCounter() {
+        const now = new Date();
+        const diff = Math.max(0, endDate - now);
+        
+        const values = {
+          days: Math.floor(diff / 86400000),
+          hours: Math.floor(diff % 86400000 / 3600000),
+          minutes: Math.floor(diff % 3600000 / 60000),
+          seconds: Math.floor(diff % 60000 / 1000)
+        };
+        
+        Object.entries(values).forEach(([unit, value]) => {
+          countdownElements[unit].textContent = String(value).padStart(2, '0');
+        });
       }
-    });
+      
+      updateCounter();
+      return setInterval(updateCounter, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', initCountdown);
   </script>
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
